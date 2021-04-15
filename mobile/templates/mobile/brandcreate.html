@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{%extends 'mobile/base.html'%}
+{%block body_block%}
+<h1> Mobile Creation</h1>
+<div class="row">
+    <div class="col-4"></div><div class="col-4">
+        <form action="" method="post">
+            {%csrf_token%}
+
+            {{form.as_table}}
+            <button class="bttt" type="submit" style="background-color:#212529; color:#8e8e8e; hover:color:red;">Create</button>
+        </form>
+</div><div class="col-4"></div></div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-hover">
+            <tr>
+                <th>Brand_name</th>
+            </tr>
+            {%for brand in brands%}
+            <tr><td>{{brand.brand_name}}</td>
+            <td><a href="{%url 'brandup' brand.id%}"><button style="background-color:#212529; color:#8e8e8e;">Edit</button></a></td>
+            <td><a href="{%url 'branddel' brand.id%}"><button style="background-color:#212529; color:#8e8e8e;">Delete</button></a></td></tr>
+
+        {% endfor %}</table>
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{%extends 'mobile/base.html'%}
+{%block body_block%}
+
+<form action="" method="post">
+    {%csrf_token%}
+    <table class="table">
+        {{form.as_table}}
+        </table>
+    <button type="submit">Update</button>
+</form>
+
+{%endblock%}

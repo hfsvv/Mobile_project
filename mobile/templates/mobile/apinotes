@@ -1,0 +1,27 @@
+#mobile/brands
+    get=>list all brands
+    post=>create brand
+    status: completed
+#mobile/brands/del/id
+    get=>fetch curresponding brand
+    post=>delete brand
+    status:completed
+#mobile/brands/upd/id
+    get=>fetch curresponding brand
+    post=>update brand
+    status:completed
+
+__________________________________
+
+#mobile/mobiles
+    GET=>LIST ALL MOBILES
+    post=>create mobiles
+
+#mobile/mobiles/detail/id
+
+    Get=>List specific Mobile
+
+#user authentication
+
+
+#mobile/userRegistration

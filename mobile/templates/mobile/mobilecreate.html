@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{%extends 'mobile/base.html'%}
+{%block body_block%}
+<h1>Mobile Creation</h1>
+<!--<div class="row"><div class="col-4"></div><div class="col-4">-->
+<form action="" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <table class="table">
+        {{form.as_table}}
+    <tr><td></td></tr>
+        </table>
+    <button type="submit">create</button>
+</form>
+<div class="nss"></div>
+<h1 class="nss">Mobile List</h1>
+<!--</div><div class="col-4"></div>-->
+<!--</div>-->
+<div>
+    <table class="table table-hover">
+        <tr>
+            <th>Mobile Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Model Name</th>
+            <th>Spec</th>
+            <th>Description</th>
+            <th>Image</th></tr>
+        <tr>
+            {%for mobile in mobiles%}
+            <td>{{mobile.mobile_name}}</td>
+            <td>{{mobile.Brand}}</td>
+            <td>{{mobile.price}}</td>
+            <td>{{mobile.model_name}}</td>
+            <td>{{mobile.spec}}</td>
+            <td>{{mobile.description}}</td>
+            <td><img src="{{mobile.img.url}}" height="60px" alt=""></td>
+            <td><a href="{%url 'mobupd' mobile.id%}">Edit</a></td>
+            <td><a href="{%url 'mobdel' mobile.id%}">Delete</a></td>
+        </tr>
+            {%endfor%}
+    </table>
+</div>
+{%endblock%}
