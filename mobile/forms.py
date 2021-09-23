@@ -22,7 +22,7 @@ class OrderForm(ModelForm):
     # prodect=forms.CharField(max_length=150)
     class Meta:
         model=Orders
-        fields='__all__'
+        fields=['prodect','user','address']
 
 # class CartForm(ModelForm):
 #     prodect=forms.CharField(max_length=150)
